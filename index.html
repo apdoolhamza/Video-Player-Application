@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Android Video Player Application</title>
+    <!--Importin Css file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Importing font awesome icons file -->
+     <link rel="stylesheet" href="css/fontawesome/all.css">
+</head>
+<body>
+  <!--File Uploading Scanner-->
+   <div class="uploadScanVideos">
+   <div id="rotater">
+     <img src="img/upload_Video.png" alt="">
+     <div class="rotate"></div>
+     <div class="scanDot"></div>
+   </div>
+
+     <!--upload new video input button-->
+     <label class="uploadIcon" for="uploadVideos">Upload Videos
+       <input type="file" multiple id="uploadVideos" accept="video/*" hidden>
+     </label>
+   </div>
+  
+<!-- currant video container-->
+ <div class="currantVideoContainer">
+   
+   <!--currant video playing container-->
+<output class="currantPlaying">
+  <video class="smallScreen"></video>
+  <div class="lodingSpinner"><span></span></div>
+</output>
+  
+  <div class="playerControls">
+    
+      <div class="header">
+     
+        <!-- track name -->
+        <div class="track-name">Empty</div>
+      <!--  menuIcon-->
+      <div><img class="menuIcon" src="img/menuIcon.png" alt=""></div>
+      </div>
+    
+
+<!-- player CurrTime & TotalDuration Container -->
+    <div class="playerSliderContainer">
+      
+      <!--player Current Time-->
+      <div class="playerCurrentTime">00:00</div>
+      
+      <!-- Input seek slider range -->
+      <input type="range" min="1" max="100" value="0" class="seekSlider" onchange="seekTo()">
+      <progress min="1" max="100" value="0" class="seekSliderthumb"></progress>
+        
+        <!--player Total Duration-->
+      <div class="playerTotalDuration">00:00</div>
+      
+      <!--FullScreen Icon-->
+      <i id="fullScreenIcon" class="fas fa-expand"></i>
+      
+      <!--SmallScreen Icon-->
+      <i id="smallScreenIcon" class="fas fa-compress-arrows-alt"></i>
+    </div>
+    
+<!-- player Button -->
+  <div class="playerButton">
+
+    <!-- seek buttons, to seek 10seconds right or left -->
+    <div class="seekButtons">
+      <img src="img/leftSeek.png" class="seekLeft" alt="leftSeek">
+      <img src="img/rightSeek.png" class="seekRight" alt="rightSeek">
+    </div>
+
+  <!--Play/Pause track button-->
+  <div class="playpause-track" onclick="playpauseTrack()">
+  <i class="fa fa-play-circle"></i>
+  </div>
+  
+   </div>
+   </div>
+   </div>
+
+<!--All uploaded videos list container-->
+<output class="videosListContainer">
+  <div class="allVideiosHeaderNote">VIDEO PLAYER <span> <span class="totalVideos">00</span> VIDEOS <span class="totalVideosSize"></span> </san> <i id="sidebarBtn" onclick="showSideBar();" class="fas fa-ellipsis-vertical"></i></div>
+</output>
+
+<!-- sideBar -->
+<div class="sideBar">
+<div class="contant">
+  <i class="fas backArrow fa-chevron-left"></i>
+  <img src="img/logo.png" alt="logo">
+  <p>Video Player application Front-End Project</p>
+  <a id="buySource" href="https://wa.me/c/2348138028142"><i class="fas fa-laptop-code"></i> BUY Source Code</a>
+
+  <div class="contantList">
+    <ul>
+      <li><a href="mailto:awesomedeveloperng@gmail.com"><i class="fas fa-message"></i> Give Feedback</a></li>
+      <li onclick="share();"><i class="fas fa-info-circle"></i> Version 1.0</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+    <!-- js file -->
+ <script async type="text/javascript" src="script/index.js"></script>
+</body>
+</html>
